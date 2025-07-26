@@ -2,7 +2,7 @@
 
 <img src="turtlesim_video_large.gif" alt="TurtleBot Demo" width="100%">
 
-This tutorial guides you through creating a Python-based MCP (Machine-Controllable Peripheral) server to control a ROS 2-enabled robot, like a TurtleBot, using natural language commands through an AI agent.
+This tutorial guides you through creating a Python-based MCP (Model Context Protocol) server to control a ROS 2-enabled robot, like a TurtleBot, using natural language commands through an AI agent.
 
 ## What is an MCP Server?
 

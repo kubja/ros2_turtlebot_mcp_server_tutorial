@@ -1,6 +1,7 @@
 import rclpy
 from rclpy.node import Node
-from geometry_msgs.msg import Twist, Pose
+from geometry_msgs.msg import Twist
+from turtlesim_msgs.msg import Pose
 import uuid
 import math
 from flask import Flask, request, jsonify
@@ -35,7 +36,7 @@ class TurtleBotController(Node):
         self.publisher.publish(msg)
         self.get_logger().info(f'Publishing Twist: linear.x={linear_x}, angular.z={angular_z}')
 
-class CommandProcessorNode:
+class CommandProcessorNode(Node):
     def __init__(self):
         super().__init__('command_processor_node')
         self.active_move_command = None

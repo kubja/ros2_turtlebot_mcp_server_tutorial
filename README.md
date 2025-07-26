@@ -10,6 +10,7 @@ An MCP server acts as a bridge between an AI agent (like a large language model)
 
 *   Python 3.8+
 *   ROS 2 (Humble Hawksbill recommended)
+*   Turtlesim (for testing without a physical robot)
 *   `pip` and `venv` for Python package management
 
 ## Project Setup
@@ -197,7 +198,12 @@ You can find the complete `app.py` code in the original response.
     source /opt/ros/humble/setup.bash
     ```
 
-2.  **Run the application:**
+2.  **Run Turtlesim (in a separate terminal):**
+    ```bash
+    ros2 run turtlesim turtlesim_node
+    ```
+
+3.  **Run the application:**
     ```bash
     python app.py
     ```

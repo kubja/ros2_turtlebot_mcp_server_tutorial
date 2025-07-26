@@ -9,7 +9,7 @@ An MCP server acts as a bridge between an AI agent (like a large language model)
 ## Prerequisites
 
 *   Python 3.8+
-*   ROS 2 (Humble Hawksbill recommended)
+*   ROS 2 (Jazzy recommended)
 *   Turtlesim (for testing without a physical robot)
 *   `pip` and `venv` for Python package management
 

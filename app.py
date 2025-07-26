@@ -247,7 +247,7 @@ def _move(linear_x, angular_z, duration_s=None):
             if (angular_z == 0 and linear_x != 0) or (linear_x == 0 and angular_z != 0):
                 while True:
                     try:
-                        response = command_processor_node.response_queue.get(timeout=30) # Increased timeout
+                        response = command_processor_node.response_queue.get(timeout=120) # Increased timeout
                         if response.get('command_id') == command_id and response.get('status') == 'completed':
                             return {'status': 'success', 'linear_x': linear_x, 'angular_z': angular_z, 'duration_s': duration_s}
                     except queue.Empty:
@@ -274,7 +274,7 @@ def _move_distance(distance, linear_velocity):
         command_queue.put({'type': 'move_distance', 'distance': distance, 'linear_velocity': linear_velocity, 'command_id': command_id})
         while True:
             try:
-                response = command_processor_node.response_queue.get(timeout=30)
+                response = command_processor_node.response_queue.get(timeout=120)
                 if response.get('command_id') == command_id and response.get('status') == 'completed':
                     return {'status': 'success', 'distance': distance, 'linear_velocity': linear_velocity}
             except queue.Empty:
@@ -289,7 +289,7 @@ def _rotate_angle(angle, angular_velocity):
         command_queue.put({'type': 'rotate_angle', 'angle': angle, 'angular_velocity': angular_velocity, 'command_id': command_id})
         while True:
             try:
-                response = command_processor_node.response_queue.get(timeout=30)
+                response = command_processor_node.response_queue.get(timeout=120)
                 if response.get('command_id') == command_id and response.get('status') == 'completed':
                     return {'status': 'success', 'angle': angle, 'angular_velocity': angular_velocity}
             except queue.Empty:
